@@ -69,7 +69,7 @@ function Loginpage() {
 
             <button
               type="submit"
-              className="w-full bg-purple-500 hover:bg-purple-600 text-white h-12 rounded-md"
+              className="w-full bg-purple-500 hover:bg-purple-600 text-white h-12"
             >
               Log in
             </button>

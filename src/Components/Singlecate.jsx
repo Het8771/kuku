@@ -70,11 +70,11 @@ const ProductPage = () => {
           {products.slice(0, visibleProducts).map((product, index) => (
             <div
               key={product.id}
-              className="relative bg-white p-2 md:p-4 border border-purple-200 hover:border-purple-600 rounded-lg shadow-sm hover:shadow-md group overflow-hidden transition-all duration-300"
+              className="relative bg-white p-2 md:p-4 border border-purple-200 hover:border-purple-600  shadow-sm hover:shadow-md group overflow-hidden transition-all duration-300"
               onTouchStart={() => handleTouch(index)}
             >
               {/* Product Image - Responsive height */}
-              <div className="relative w-full h-[120px] sm:h-[150px] md:h-[180px] lg:h-[200px] overflow-hidden rounded-md">
+              <div className="relative w-full h-[120px] sm:h-[150px] md:h-[180px] lg:h-[200px] overflow-hidden">
                 <img
                   src={highangle}
                   alt={product.name}
@@ -97,7 +97,7 @@ const ProductPage = () => {
               </div>
 
               {/* Add to Cart Button - Always visible on mobile */}
-              <Link to ="/Cart"><button className="w-full bg-purple-600 text-white py-[6px] md:py-[10px] rounded-lg flex items-center justify-center gap-x-[6px] md:gap-x-[10px] text-xs md:text-sm md:opacity-0 md:transform md:translate-y-[20px] group-hover:translate-y-[0] group-hover:opacity-100 transition-all duration-[300ms] cursor-pointer">
+              <Link to ="/Cart"><button className="w-full bg-purple-600 text-white py-[6px] md:py-[10px] flex items-center justify-center gap-x-[6px] md:gap-x-[10px] text-xs md:text-sm md:opacity-0 md:transform md:translate-y-[20px] group-hover:translate-y-[0] group-hover:opacity-100 transition-all duration-[300ms] cursor-pointer">
               <ShoppingCart className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" />
                 <span>Add to Cart</span>
               </button></Link>

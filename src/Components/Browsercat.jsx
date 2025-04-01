@@ -18,7 +18,7 @@ const categories = [
 const CategoriesSection = () => {
   return (
     <section className=" max-w-7xl mx-auto px-7  py-10 bg-white text-left overflow-hidden">
-      <h2 className="text-2xl font-semibold text-center mb-3">Browse Categories</h2>
+      <h2 className="text-3xl font-semibold text-gray-900 mb-3 text-center">Browse Categories</h2>
       <p className="text-gray-600 mb-6 text-center">Discover our exquisite collection by category</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 ">
         {categories.map((category, index) => (

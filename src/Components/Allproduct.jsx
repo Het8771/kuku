@@ -214,7 +214,7 @@ const ProductPage = () => {
           {/* Sidebar Filter - Hidden by default on mobile, shown when filterOpen is true */}
           <aside
             className={`${filterOpen ? "block" : "hidden"
-              } md:block w-full md:w-1/4 xl:w-1/5 p-4 border border-purple-600 rounded-lg transition-all duration-300 relative`}
+              } md:block w-full md:w-1/4 xl:w-1/5 p-4 border border-purple-600 transition-all duration-300 relative`}
           >
             {/* Close button for mobile */}
             <button
@@ -245,20 +245,20 @@ const ProductPage = () => {
               <input
                 type="number"
                 placeholder="Min"
-                className="border p-1 w-1/2 rounded"
+                className="border p-1 w-1/2"
                 value={minPrice}
                 onChange={e => setMinPrice(e.target.value)}
               />
               <input
                 type="number"
                 placeholder="Max"
-                className="border p-1 w-1/2 rounded"
+                className="border p-1 w-1/2"
                 value={maxPrice}
                 onChange={e => setMaxPrice(e.target.value)}
               />
             </div>
             <button
-              className="bg-purple-600 text-white w-full mt-3 py-2 rounded"
+              className="bg-purple-600 text-white w-full mt-3 py-2"
               onClick={handlePriceApply}
             >
               Apply
@@ -289,7 +289,7 @@ const ProductPage = () => {
                   No products match your filters.
                 </p>
                 <button
-                  className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg"
+                  className="mt-4 bg-purple-600 text-white px-4 py-2"
                   onClick={() => {
                     setSelectedCategories([])
                     setSelectedMaterials([])
@@ -307,7 +307,7 @@ const ProductPage = () => {
                   <div
                     key={product.id}
                     ref={el => (productRefs.current[index] = el)}
-                    className={`relative bg-white p-2 md:p-4 border border-purple-200 hover:border-purple-600 rounded-lg shadow-sm hover:shadow-md group overflow-hidden transition-all duration-300"
+                    className={`relative bg-white p-2 md:p-4 border border-purple-200 hover:border-purple-600 shadow-sm hover:shadow-md group overflow-hidden transition-all duration-300"
                       ${activeIndex === index ? "ring-2 ring-purple-600" : ""}
                       ${!isMobile ? "group hover:scale-105" : ""}
                     `}
@@ -318,7 +318,7 @@ const ProductPage = () => {
                       <img
                         src={highangle}
                         alt={product.name}
-                        className={`w-full h-full object-cover rounded-md transition-all duration-300
+                        className={`w-full h-full object-cover transition-all duration-300
                           ${!isMobile
                             ? "group-hover:scale-105"
                             : activeIndex === index
@@ -358,7 +358,7 @@ const ProductPage = () => {
                     {/* Add to Cart Button */}
                     <Link to="/Cart">
                       <button
-                        className={`w-full mt-2 sm:mt-4 bg-purple-600 text-white py-1.5 sm:py-2 rounded-lg flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm transition-all duration-300 cursor-pointer
+                        className={`w-full mt-2 sm:mt-4 bg-purple-600 text-white py-1.5 sm:py-2  flex items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm transition-all duration-300 cursor-pointer
       ${!isMobile
                             ? "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0"
                             : "opacity-100 translate-y-0"

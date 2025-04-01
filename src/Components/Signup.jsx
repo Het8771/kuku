@@ -81,7 +81,7 @@ function Signup() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-3 mt-6 text-white bg-purple-500 rounded-md hover:bg-purple-600 transition-colors"
+              className="w-full py-3 mt-6 text-white bg-purple-500  hover:bg-purple-600 transition-colors"
             >
               Sign Up
             </button>

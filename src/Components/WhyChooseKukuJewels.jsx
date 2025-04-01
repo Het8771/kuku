@@ -25,7 +25,7 @@ const features = [
 
 const FeatureCard = ({ feature }) => {
   return (
-    <div className="border border-[#DDB4FF] p-6 text-center rounded-lg shadow-md bg-white">
+    <div className="border border-[#DDB4FF] p-6 text-center shadow-md bg-white">
       <div className="bg-[#EAD8FF] text-[#7A29FF] w-14 h-14 flex items-center justify-center rounded-full text-2xl font-bold mx-auto mb-3">
         {feature.id}
       </div>
@@ -40,7 +40,7 @@ const WhyChooseKukuJewels = () => {
     <div className="bg-slate-100">
     <section className="max-w-7xl mx-auto py-15 px-6">
       <div className=" mb-10">
-        <h2 className="text-3xl font-semibold text-gray-900">Why Choose Kuku Jewels</h2>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-3">Why Choose Kuku Jewels</h2>
         <p className="text-gray-600 text-lg">Unique designs, premium quality—discover the beauty of KUKU JEWELS.</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">

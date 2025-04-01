@@ -31,7 +31,7 @@ const InstagramSection = () => {
           ))}
         </div>
 
-        <button className="mt-6 bg-purple-600 text-white px-6 sm:px-12 py-2 text-lg rounded-lg hover:bg-purple-700 transition">
+        <button className="mt-6 bg-purple-600 text-white px-6 sm:px-12 py-2 text-lg hover:bg-purple-700 transition">
           View Instagram
         </button>
       </div>

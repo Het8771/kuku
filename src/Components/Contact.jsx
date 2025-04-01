@@ -47,7 +47,7 @@ const ContactUs = () => {
                 className="w-full p-3 border border-purple-500  outline-none"
               ></textarea>
             </div>
-            <button className="bg-purple-600 text-white px-6 py-3 rounded-lg w-full hover:bg-purple-700">
+            <button className="bg-purple-600 text-white px-6 py-3 w-full hover:bg-purple-700">
               Send Message
             </button>
           </form>

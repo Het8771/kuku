@@ -66,7 +66,7 @@ const AboutUs = () => {
         ].map((item) => (
           <div
             key={item.id}
-            className="p-6 border rounded-lg shadow-md text-center"
+            className="p-6 border border-purple-400 shadow-md text-center"
           >
             <div className="bg-purple-100 text-purple-600 w-12 h-12 flex items-center justify-center text-lg font-semibold rounded-full mx-auto">
               {item.id}
