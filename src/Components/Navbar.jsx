@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { Search, Heart, ShoppingCart, User, Menu, X } from "lucide-react";
 import Logokuku from "../assets/images/Logokuku.png";
 import { Link, useLocation } from "react-router-dom";
+import highangle from "../assets/images/highangle.png";
 
 // Example products data (you can replace this with real data from an API or database)
 const products = [
-  { id: 1, name: "Gold Infinity Ring", price: "$1,299.00" },
+  { id: 1, name: "Gold Infinity Ring", price: "$1,299.00", image: highangle },
   { id: 2, name: "Silver Eternity Band", price: "$899.00" },
   { id: 3, name: "Diamond Solitaire Ring", price: "$2,499.00" },
   { id: 4, name: "Pearl Accent Ring", price: "$1,099.00" },
@@ -48,11 +49,10 @@ export default function Navbar() {
 
       {/* Search Bar (Toggle Animation) */}
       <div
-        className={`absolute top-0 left-0 w-full bg-gray-100 border-b border-gray-300 transition-transform duration-300 ${
-          searchOpen ? "translate-y-0" : "-translate-y-full"
-        } z-20`}
+        className={`absolute top-0 left-0 w-full h-auto self-start bg-white transition-transform duration-300 ${searchOpen ? "translate-y-0" : "-translate-y-full"
+          } z-20`}
       >
-        <div className="flex items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="flex items-center h-30 max-w-3xl space-x-9 mx-auto px-4 sm:px-6 lg:px-8 py-2">
           <div className="w-24 sm:w-32">
             <Link to="/">
               <img src={Logokuku || "/placeholder.svg"} alt="Gracy Jewel Logo" className="w-full" />
@@ -61,14 +61,14 @@ export default function Navbar() {
           <input
             type="text"
             placeholder="Search product..."
-            className="w-full py-2 px-4 bg-transparent text-gray-800 focus:outline-none"
+            className="w-full py-2 px-4 bg-purple-500 text-white focus:outline-none border border-purple-600"
             autoFocus
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           <button
             onClick={() => setSearchOpen(false)}
-            className="p-2 bg-purple-500 text-white rounded-lg ml-2"
+            className="p-2 bg-purple-500 text-white ml-2"
             aria-label="Close search"
           >
             <X size={20} />
@@ -77,18 +77,39 @@ export default function Navbar() {
 
         {/* Display Search Results when a search is made */}
         {searchQuery && filteredProducts.length > 0 && (
-          <div className="mt-4 px-4">
+          <div className="mx-auto container max-w-7xl px-10 py-4">
             <h2 className="text-2xl font-semibold mb-4">Search Results:</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {filteredProducts.map((product) => (
-                <div key={product.id} className="border p-4 rounded-lg shadow-md">
-                  <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4" />
-                  <p className="text-lg font-medium">{product.name}</p>
+                <div key={product.id} className="relative bg-white p-2 md:p-4 border border-purple-200 hover:border-purple-600 shadow-sm hover:shadow-md group overflow-hidden transition-all duration-300">
+                  {/* Wishlist Button */}
+                  <button className="absolute top-[6px] right-[6px] md:top-[10px] md:right-[10px] bg-purple-600 p-[6px] md:p-[8px] rounded-full md:opacity-0 opacity-70 z-20 transform scale-[0.9] group-hover:scale-[1] group-hover:opacity-100 transition-all duration-[300ms]">
+                    <Heart className="w-[14px] h-[14px] md:w-[20px] md:h-[20px] text-white" />
+                  </button>
+
+                  {/* Product Image */}
+                  <img src={product.image} alt={product.name} className="relative w-full h-[120px] sm:h-[100px] md:h-[180px] lg:h-[200px] overflow-hidden"/>
+
+                  {/* Product Name & Price */}
+                  <div className="p-2 md:p-4 text-center">
+                    <h3 className="font-medium text-xs sm:text-sm md:text-base truncate">
+                      {product.name}
+                    </h3>
+                    <p className="text-purple-600 font-semibold text-xs sm:text-sm">
+                      {product.price}
+                    </p>
+                  </div>
+                  {/* Add to Cart Button */}
+                  <button className="w-full bg-purple-600 text-white py-[6px] md:py-[10px] flex items-center justify-center gap-x-[6px] md:gap-x-[10px] text-xs md:text-sm md:opacity-0 md:transform md:translate-y-[20px] group-hover:translate-y-[0] group-hover:opacity-100 transition-all duration-[300ms]">
+                    <ShoppingCart className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" />
+                    <span>Add to Cart</span>
+                  </button>
                 </div>
               ))}
             </div>
           </div>
-        )}
+        )
+        }
       </div>
 
       {/* Navbar */}
