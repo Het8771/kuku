@@ -7,6 +7,7 @@ import Subscribe from "./Subscribe";
 import login from "../assets/images/login.png";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 
 const ProductDetails = () => {
@@ -223,13 +224,13 @@ const ProductDetails = () => {
               {/* Update the product details section to be more mobile-friendly */}
               {/* Replace the "Add to Cart and Buy Now Buttons" section with this */}
               <div className="flex flex-col sm:flex-row items-center gap-4 mt-6 w-full">
-                <button className="w-full px-4 py-3 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center">
+                <Link to ={'/Cart'}><button className="w-full px-4 py-3 bg-purple-600 text-white border border-purple-600 font-medium rounded-md hover:bg-purple-700 transition duration-200 flex items-center justify-center">
                   <CiShoppingCart className="w-5 h-5 mr-2" />
                   Add to Cart
-                </button>
-                <button className="w-full px-4 py-3 border border-purple-600 text-purple-600 font-medium rounded-md hover:bg-purple-50 transition-colors duration-200">
+                </button></Link>
+                <Link to ="/"><button className="w-full px-4 py-3 border border-purple-600 bg-white text-purple-600 hover:text-white font-medium rounded-md hover:bg-purple-700 transition duration-200">
                   Buy Now
-                </button>
+                </button></Link>
               </div>
 
               {/* Additional Information */}

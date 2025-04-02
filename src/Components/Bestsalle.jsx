@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Heart, ShoppingCart } from "lucide-react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import highangle from "../assets/images/highangle.png";
 
 const products = [
@@ -52,9 +52,9 @@ const ProductPage = () => {
                   className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-[300ms]"
                 />
                 {/* Wishlist Button */}
-                <button className="absolute top-[6px] right-[6px] md:top-[10px] md:right-[10px] bg-purple-600 p-[6px] md:p-[8px] rounded-full md:opacity-0 opacity-70 transform scale-[0.9] group-hover:scale-[1] group-hover:opacity-100 transition-all duration-[300ms]">
+                <Link to ="/Wishlist"><button className="absolute top-[6px] right-[6px] md:top-[10px] md:right-[10px] bg-purple-600 p-[6px] md:p-[8px] rounded-full md:opacity-0 opacity-70 transform scale-[0.9] group-hover:scale-[1] group-hover:opacity-100 transition-all duration-[300ms] cursor-pointer">
                   <Heart className="w-[14px] h-[14px] md:w-[20px] md:h-[20px] text-white" />
-                </button>
+                </button></Link>
               </div>
 
               {/* Product Details */}
@@ -68,10 +68,10 @@ const ProductPage = () => {
               </div>
 
               {/* Add to Cart Button */}
-              <button className="w-full bg-purple-600 text-white py-[6px] md:py-[10px] flex items-center justify-center gap-x-[6px] md:gap-x-[10px] text-xs md:text-sm md:opacity-0 md:transform md:translate-y-[20px] group-hover:translate-y-[0] group-hover:opacity-100 transition-all duration-[300ms]">
+              <Link to = "/Cart"><button className="w-full bg-purple-600 text-white py-[6px] md:py-[10px] flex items-center justify-center gap-x-[6px] md:gap-x-[10px] text-xs md:text-sm md:opacity-0 md:transform md:translate-y-[20px] group-hover:translate-y-[0] group-hover:opacity-100 transition-all duration-[300ms] cursor-pointer">
                 <ShoppingCart className="w-[14px] h-[14px] md:w-[16px] md:h-[16px]" />
                 <span>Add to Cart</span>
-              </button>
+              </button></Link>
             </div>
           ))}
         </div>
