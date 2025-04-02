@@ -103,7 +103,7 @@ const ProductDetails = () => {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div>
         <div className="max-w-7xl mx-auto p-4 md:p-8">
           {/* Breadcrumb */}
@@ -168,11 +168,10 @@ const ProductDetails = () => {
                     <button
                       key={material}
                       onClick={() => setSelectedMaterial(material)}
-                      className={`px-3 py-2 border rounded-md text-sm ${
-                        selectedMaterial === material
+                      className={`px-3 py-2 border rounded-md text-sm ${selectedMaterial === material
                           ? "border-purple-600 bg-purple-100 text-purple-600"
                           : "border-gray-300 text-gray-700"
-                      }`}
+                        }`}
                     >
                       {material}
                     </button>
@@ -189,11 +188,10 @@ const ProductDetails = () => {
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`px-3 py-2 border rounded-md ${
-                        selectedSize === size
+                      className={`px-3 py-2 border rounded-md ${selectedSize === size
                           ? "border-purple-600 bg-purple-100 text-purple-600"
                           : "border-gray-300 text-gray-700"
-                      }`}
+                        }`}
                     >
                       {size}
                     </button>
@@ -224,11 +222,11 @@ const ProductDetails = () => {
               {/* Update the product details section to be more mobile-friendly */}
               {/* Replace the "Add to Cart and Buy Now Buttons" section with this */}
               <div className="flex flex-col sm:flex-row items-center gap-4 mt-6 w-full">
-                <Link to ={'/Cart'}><button className="w-full px-4 py-3 bg-purple-600 text-white border border-purple-600 font-medium rounded-md hover:bg-purple-700 transition duration-200 flex items-center justify-center">
+                <Link to={'/Cart'}><button className="w-full px-4 py-3 bg-purple-600 text-white border border-purple-600 font-medium rounded-md hover:bg-purple-700 transition duration-200 flex items-center justify-center">
                   <CiShoppingCart className="w-5 h-5 mr-2" />
                   Add to Cart
                 </button></Link>
-                <Link to ="/"><button className="w-full px-4 py-3 border border-purple-600 bg-white text-purple-600 hover:text-white font-medium rounded-md hover:bg-purple-700 transition duration-200">
+                <Link to="/"><button className="w-full px-4 py-3 border border-purple-600 bg-white text-purple-600 hover:text-white font-medium rounded-md hover:bg-purple-700 transition duration-200">
                   Buy Now
                 </button></Link>
               </div>
@@ -250,11 +248,10 @@ const ProductDetails = () => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab.toLowerCase())}
-                  className={`py-3 px-1 text-sm font-medium ${
-                    activeTab === tab.toLowerCase()
+                  className={`py-3 px-1 text-sm font-medium ${activeTab === tab.toLowerCase()
                       ? "text-purple-600 border-b-2 border-purple-600"
                       : "text-gray-500 hover:text-purple-600"
-                  }`}
+                    }`}
                 >
                   {tab}
                 </button>
@@ -386,11 +383,10 @@ const ProductDetails = () => {
                               key={i}
                               type="button"
                               onClick={() => handleRatingChange(i + 1)}
-                              className={`text-xl ${
-                                i + 1 <= newReview.rating
+                              className={`text-xl ${i + 1 <= newReview.rating
                                   ? "text-purple-600"
                                   : "text-gray-300"
-                              }`}
+                                }`}
                             >
                               <FaStar />
                             </button>
@@ -501,7 +497,7 @@ const ProductDetails = () => {
         </div>
         {/* <Subscribe/> */}
       </div>
-      <Footer/>
+      <Footer />
     </>
   )
 }

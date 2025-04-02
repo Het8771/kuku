@@ -12,7 +12,7 @@ const footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Tagline Section */}
           <div>
-            <Link to ="/"><img src={logof} alt="Gracy Jewel Logo" className="" /></Link>
+            <Link to="/"><img src={logof} alt="Gracy Jewel Logo" className="" /></Link>
             <p className="mt-4">
               Crafting timeless gold jewelry pieces that celebrate life's
               precious moments.

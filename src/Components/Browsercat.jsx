@@ -11,7 +11,7 @@ const categories = [
   { name: "Earrings", image: closeupshort },
   { name: "Necklaces", image: fullframe },
   { name: "Bracelet", image: setgold },
-  { name: "Bangles", image: celebration  },
+  { name: "Bangles", image: celebration },
   { name: "Pendants", image: necklase },
 ];
 

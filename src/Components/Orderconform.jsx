@@ -179,27 +179,24 @@ const TrackOrderContent = ({ orderStatus, orderDetails }) => {
             >
               <div className="flex flex-col items-center md:flex-row md:flex-1">
                 <hr
-                  className={`w-full border hidden md:block ${
-                    idx === 0
+                  className={`w-full border hidden md:block ${idx === 0
                       ? "border-none"
                       : "" || orderStatus >= idx
-                      ? "border-purple-600"
-                      : ""
-                  }`}
+                        ? "border-purple-600"
+                        : ""
+                    }`}
                 />
                 <div
-                  className={`w-8 h-8 rounded-full border-2 flex-none flex items-center justify-center ${
-                    orderStatus > idx
+                  className={`w-8 h-8 rounded-full border-2 flex-none flex items-center justify-center ${orderStatus > idx
                       ? "bg-purple-600 border-purple-600"
                       : "" || orderStatus === idx
-                      ? "border-purple-600"
-                      : ""
-                  }`}
+                        ? "border-purple-600"
+                        : ""
+                    }`}
                 >
                   <span
-                    className={`w-2.5 h-2.5 rounded-full bg-purple-600 ${
-                      orderStatus !== idx ? "hidden" : ""
-                    }`}
+                    className={`w-2.5 h-2.5 rounded-full bg-purple-600 ${orderStatus !== idx ? "hidden" : ""
+                      }`}
                   ></span>
                   {orderStatus > idx ? (
                     <svg
@@ -221,20 +218,18 @@ const TrackOrderContent = ({ orderStatus, orderDetails }) => {
                   )}
                 </div>
                 <hr
-                  className={`h-12 border md:w-full md:h-auto ${
-                    idx + 1 === orderStatuses.length
+                  className={`h-12 border md:w-full md:h-auto ${idx + 1 === orderStatuses.length
                       ? "border-none"
                       : "" || orderStatus > idx
-                      ? "border-purple-600"
-                      : ""
-                  }`}
+                        ? "border-purple-600"
+                        : ""
+                    }`}
                 />
               </div>
               <div className="h-8 flex justify-center items-center md:mt-3 md:h-auto">
                 <h3
-                  className={`text-sm ${
-                    orderStatus === idx ? "text-purple-600" : ""
-                  }`}
+                  className={`text-sm ${orderStatus === idx ? "text-purple-600" : ""
+                    }`}
                 >
                   {item}
                 </h3>
@@ -286,37 +281,6 @@ const DeleteAccount = () => {
   return (
     <div className="space-y-6">
       <h3 className="text-xl font-semibold">Delete Account</h3>
-
-      {/* <div className="bg-red-50 border border-red-200 rounded-md p-4">
-        <h4 className="text-lg font-medium text-red-800">
-          Warning: This action cannot be undone
-        </h4>
-        <p className="mt-2 text-sm text-red-700">
-          Deleting your account will permanently remove all your personal
-          information, order history, and saved preferences from our system. You
-          will not be able to recover this information later.
-        </p>
-
-        <div className="mt-4 space-y-4">
-          <div className="flex items-center">
-            <input
-              id="confirm"
-              type="checkbox"
-              className="h-4 w-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500"
-            />
-            <label
-              htmlFor="confirm"
-              className="ml-2 block text-sm text-gray-700"
-            >
-              I understand that this action is permanent and cannot be reversed
-            </label>
-          </div>
-
-          <button className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">
-            Delete My Account
-          </button>
-        </div>
-      </div> */}
     </div>
   )
 }
@@ -368,20 +332,20 @@ const TrackOrder = () => {
             {activeSection === "profile"
               ? "My Profile"
               : activeSection === "orders"
-              ? "Order History"
-              : activeSection === "delete"
-              ? "Delete Account"
-              : "Track Your Order"}
+                ? "Order History"
+                : activeSection === "delete"
+                  ? "Delete Account"
+                  : "Track Your Order"}
           </h2>
           <p className="text-sm text-gray-500">
             Home /{" "}
             {activeSection === "profile"
               ? "My Profile"
               : activeSection === "orders"
-              ? "Order History"
-              : activeSection === "delete"
-              ? "Delete Account"
-              : "Track Your Order"}
+                ? "Order History"
+                : activeSection === "delete"
+                  ? "Delete Account"
+                  : "Track Your Order"}
           </p>
 
           <div className="flex flex-col md:flex-row gap-6 mt-6">
@@ -398,41 +362,28 @@ const TrackOrder = () => {
 
               <div className="mt-6 space-y-4">
                 <button
-                  className={`flex items-center w-full ${
-                    activeSection === "profile"
+                  className={`flex items-center w-full ${activeSection === "profile"
                       ? "bg-purple-600 text-white"
                       : "text-gray-700 hover:text-purple-600 hover:bg-purple-600 hover:text-white"
-                  } p-2 rounded cursor-pointer`}
+                    } p-2 rounded cursor-pointer`}
                   onClick={() => setActiveSection("profile")}
                 >
                   <User className="mr-2" size={18} /> My Profile
                 </button>
-                {/* <button
-                  className={`flex items-center w-full ${
-                    activeSection === "orders"
-                      ? "bg-purple-600 text-white"
-                      : "text-gray-700 hover:text-purple-600 hover:bg-purple-600 hover:text-white"
-                  } p-2 rounded cursor-pointer`}
-                  onClick={() => setActiveSection("orders")}
-                >
-                  <List className="mr-2" size={18} /> Order History
-                </button> */}
                 <button
-                  className={`flex items-center w-full ${
-                    activeSection === "track"
+                  className={`flex items-center w-full ${activeSection === "track"
                       ? "bg-purple-600 text-white"
                       : "text-gray-700 hover:text-purple-600 hover:bg-purple-600 hover:text-white"
-                  } p-2 rounded cursor-pointer`}
+                    } p-2 rounded cursor-pointer`}
                   onClick={() => setActiveSection("track")}
                 >
                   <List className="mr-2" size={18} /> Order History
                 </button>
                 <button
-                  className={`flex items-center w-full ${
-                    activeSection === "delete"
+                  className={`flex items-center w-full ${activeSection === "delete"
                       ? "bg-purple-600 text-white"
                       : "text-gray-700 hover:text-purple-600 hover:bg-purple-600 hover:text-white"
-                  } p-2 rounded cursor-pointer`}
+                    } p-2 rounded cursor-pointer`}
                   onClick={() => setActiveSection("delete")}
                 >
                   <Trash2 className="mr-2" size={18} /> Delete Account

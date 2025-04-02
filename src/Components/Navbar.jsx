@@ -88,7 +88,7 @@ export default function Navbar() {
                   </button>
 
                   {/* Product Image */}
-                  <img src={product.image} alt={product.name} className="relative w-full h-[120px] sm:h-[100px] md:h-[180px] lg:h-[200px] overflow-hidden"/>
+                  <img src={product.image} alt={product.name} className="relative w-full h-[120px] sm:h-[100px] md:h-[180px] lg:h-[200px] overflow-hidden" />
 
                   {/* Product Name & Price */}
                   <div className="p-2 md:p-4 text-center">

@@ -28,73 +28,73 @@ const WishlistPage = () => {
 
   return (
     <>
-    <Navbar/>
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2">Wishlist</h2>
-      <Link to ="/"><p className="text-sm text-gray-500 mb-6">Home / Wishlist</p></Link>
+      <Navbar />
+      <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-2">Wishlist</h2>
+        <Link to="/"><p className="text-sm text-gray-500 mb-6">Home / Wishlist</p></Link>
 
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <div className="hidden sm:block">
-          <table className="w-full border-collapse text-sm sm:text-base">
-            <thead className="bg-gray-100">
-              <tr className="text-left text-gray-600">
-                <th className="p-2 sm:p-4">Product</th>
-                <th className="p-2 sm:p-4">Description</th>
-                <th className="p-2 sm:p-4">Total</th>
-                <th className="p-2 sm:p-4">Add To Cart</th>
-                <th className="p-2 sm:p-4">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {wishlistItems.map((item) => (
-                <tr key={item.id} className="border-t border-gray-200">
-                  <td className="p-2 sm:p-4">
-                    <img src={item.image} alt={item.name} className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded" />
-                  </td>
-                  <td className="p-2 sm:p-4">
-                    <p className="font-semibold">{item.name}</p>
-                  </td>
-                  <td className="p-2 sm:p-4 font-medium">₹{item.price.toFixed(2)}</td>
-                  <td className="p-2 sm:p-4">
-                    <button className="bg-purple-600 text-white px-3 py-1 rounded hover:bg-purple-700">Add To Cart</button>
-                  </td>
-                  <td className="p-2 sm:p-4">
-                    <button onClick={() => handleRemoveItem(item.id)} className="text-red-500 hover:text-red-700">
-                      <FaTrash />
-                    </button>
-                  </td>
+        <div className="bg-white shadow-md rounded-lg p-4">
+          <div className="hidden sm:block">
+            <table className="w-full border-collapse text-sm sm:text-base">
+              <thead className="bg-gray-100">
+                <tr className="text-left text-gray-600">
+                  <th className="p-2 sm:p-4">Product</th>
+                  <th className="p-2 sm:p-4">Description</th>
+                  <th className="p-2 sm:p-4">Total</th>
+                  <th className="p-2 sm:p-4">Add To Cart</th>
+                  <th className="p-2 sm:p-4">Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {wishlistItems.map((item) => (
+                  <tr key={item.id} className="border-t border-gray-200">
+                    <td className="p-2 sm:p-4">
+                      <img src={item.image} alt={item.name} className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded" />
+                    </td>
+                    <td className="p-2 sm:p-4">
+                      <p className="font-semibold">{item.name}</p>
+                    </td>
+                    <td className="p-2 sm:p-4 font-medium">₹{item.price.toFixed(2)}</td>
+                    <td className="p-2 sm:p-4">
+                      <button className="bg-purple-600 text-white px-3 py-1 rounded hover:bg-purple-700">Add To Cart</button>
+                    </td>
+                    <td className="p-2 sm:p-4">
+                      <button onClick={() => handleRemoveItem(item.id)} className="text-red-500 hover:text-red-700">
+                        <FaTrash />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-        {/* Mobile View */}
-        <div className="sm:hidden">
-          {wishlistItems.map((item) => (
-            <div key={item.id} className="border-t border-gray-200 p-4 flex flex-col gap-2">
-              <div className="flex items-center gap-4">
-                <img src={item.image} alt={item.name} className="w-16 h-16 rounded" />
-                <div>
-                  <p className="font-semibold">{item.name}</p>
-                  <p className="font-medium">₹{item.price.toFixed(2)}</p>
+          {/* Mobile View */}
+          <div className="sm:hidden">
+            {wishlistItems.map((item) => (
+              <div key={item.id} className="border-t border-gray-200 p-4 flex flex-col gap-2">
+                <div className="flex items-center gap-4">
+                  <img src={item.image} alt={item.name} className="w-16 h-16 rounded" />
+                  <div>
+                    <p className="font-semibold">{item.name}</p>
+                    <p className="font-medium">₹{item.price.toFixed(2)}</p>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <button className="bg-purple-600 text-white px-3 py-1 rounded hover:bg-purple-700 ml-20">Add To Cart</button>
+                  <button onClick={() => handleRemoveItem(item.id)} className="text-red-500 hover:text-red-700">
+                    <FaTrash />
+                  </button>
                 </div>
               </div>
-              <div className="flex justify-between items-center">
-                <button className="bg-purple-600 text-white px-3 py-1 rounded hover:bg-purple-700 ml-20">Add To Cart</button>
-                <button onClick={() => handleRemoveItem(item.id)} className="text-red-500 hover:text-red-700">
-                  <FaTrash />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <Link to ="/Allproduct"><button className="mt-6 px-4 py-2 border border-gray-400 rounded hover:bg-gray-100 w-full sm:w-auto">← Continue Shopping</button></Link>
+          <Link to="/Allproduct"><button className="mt-6 px-4 py-2 border border-gray-400 rounded hover:bg-gray-100 w-full sm:w-auto">← Continue Shopping</button></Link>
+        </div>
       </div>
-    </div>
-    <Subscribe/>
-    <Footer/>
+      <Subscribe />
+      <Footer />
     </>
   );
 };
