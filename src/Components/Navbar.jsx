@@ -40,7 +40,7 @@ export default function Navbar() {
     <div className="bg-white shadow relative">
       {/* Preheader */}
       <div className="bg-purple-600 text-white text-sm py-2 flex justify-between px-4 md:px-10">
-        <span>Free shipping on all orders above $100</span>
+        <span>Buy & Get 15% Extra off</span>
         <div className="hidden md:flex gap-4">
           <span>+91 82001 81000</span>
           <span>kukuweb@gmail.com</span>
@@ -155,39 +155,55 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-white shadow-md z-20 p-4 absolute top-0 right-0 w-2/3 h-full transform transition-transform ease-in-out duration-300">
-            {/* Logo & Close Button */}
-            <div className="flex justify-between items-center mb-4">
-              <Link to="/">
-                <img src={Logokuku || "/placeholder.svg"} alt="Gracy Jewel Logo" className="w-24" />
+        <div
+        className={`fixed top-0 right-0 h-full w-2/3 bg-white shadow-lg z-50 p-5 transform  ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out md:hidden`}
+      >
+        {/* Logo & Close Button */}
+        <div className="flex justify-between items-center mb-6">
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            <img
+              src={Logokuku || "/placeholder.svg"}
+              alt="Gracy Jewel Logo"
+              className="w-24"
+            />
+          </Link>
+          <button onClick={() => setMenuOpen(false)} aria-label="Close menu">
+            <X size={30} className="text-[#9D4BE0]" />
+          </button>
+        </div>
+  
+        {/* Navigation Links */}
+        <ul className="space-y-5 text-lg font-medium">
+          {[
+            { to: "/", text: "Home" },
+            { to: "/Allproduct", text: "All Product" },
+            { to: "/Category", text: "Category" },
+            { to: "/About", text: "About us" },
+            { to: "/Contact", text: "Contact us" },
+          ].map((item, index) => (
+            <li key={index}>
+              <Link to={item.to} onClick={() => setMenuOpen(false)} className="block py-2 text-gray-700 hover:text-[#9D4BE0] transition">
+                {item.text}
               </Link>
-              <button onClick={() => setMenuOpen(false)} aria-label="Close menu">
-                <X size={30} className="text-[#9D4BE0]" />
-              </button>
-            </div>
-
-            {/* Navigation Links */}
-            <ul className="space-y-4 text-lg font-medium">
-              <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-              <li><Link to="/Allproduct" onClick={() => setMenuOpen(false)}>All Product</Link></li>
-              <li><Link to="/Category" onClick={() => setMenuOpen(false)}>Category</Link></li>
-              <li><Link to="/About" onClick={() => setMenuOpen(false)}>About us</Link></li>
-              <li><Link to="/Contact" onClick={() => setMenuOpen(false)}>Contact us</Link></li>
-            </ul>
-
-            {/* Icons */}
-            <div className="mt-6 flex items-center justify-around">
-              <Link to="/Wishlist" onClick={() => setMenuOpen(false)}>
-                <Heart size={35} className="text-white bg-[#9D4BE0] cursor-pointer p-2 rounded-full" />
-              </Link>
-              <Link to="/Cart" onClick={() => setMenuOpen(false)}>
-                <ShoppingCart size={35} className="text-white bg-[#9D4BE0] cursor-pointer p-2 rounded-full" />
-              </Link>
-              <Link to="/Loginpage" onClick={() => setMenuOpen(false)}>
-                <User size={35} className="text-white bg-[#9D4BE0] cursor-pointer p-2 rounded-full" />
-              </Link>
-            </div>
-          </div>
+            </li>
+          ))}
+        </ul>
+  
+        {/* Icons */}
+        <div className="mt-8 flex justify-around">
+          <Link to="/Wishlist" onClick={() => setMenuOpen(false)}>
+            <Heart size={35} className="text-white bg-[#9D4BE0] p-2 rounded-full hover:scale-110 transition" />
+          </Link>
+          <Link to="/Cart" onClick={() => setMenuOpen(false)}>
+            <ShoppingCart size={35} className="text-white bg-[#9D4BE0] p-2 rounded-full hover:scale-110 transition" />
+          </Link>
+          <Link to="/Loginpage" onClick={() => setMenuOpen(false)}>
+            <User size={35} className="text-white bg-[#9D4BE0] p-2 rounded-full hover:scale-110 transition" />
+          </Link>
+        </div>
+      </div>
         )}
       </div>
     </div>

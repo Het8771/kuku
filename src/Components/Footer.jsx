@@ -1,9 +1,7 @@
 import React from "react";
-import img from "../assets/images/Vector.png";
-import img2 from "../assets/images/Vector (1).png";
-import img3 from "../assets/images/Vector (2).png";
 import logof from "../assets/images/logof.svg";
 import { Link } from "react-router-dom";
+import { FaInstagram, FaWhatsapp, FaFacebookF, FaPinterest } from "react-icons/fa";
 
 const footer = () => {
   return (
@@ -19,42 +17,49 @@ const footer = () => {
             </p>
             <div className="flex space-x-4 mt-4">
               {/* Social Media Icons */}
-              <a
-                href="https://www.instagram.com/accounts/login/?hl=en"
-                aria-label="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={img || "/placeholder.svg"}
-                  alt="Instagram"
-                  className="bg-white p-2 rounded-full w-8 h-8 object-contain "
-                />
-              </a>
-              <a
-                href="https://wa.me/yourphonenumber"
-                aria-label="WhatsApp"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={img2 || "/placeholder.svg"}
-                  alt="whatsapp"
-                  className="bg-white p-2 rounded-full w-8 h-8 object-contain"
-                />
-              </a>
-              <a
-                href="https://www.facebook.com/yourprofilename"
-                aria-label="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={img3 || "/placeholder.svg"}
-                  alt="facebook"
-                  className="bg-white p-2 rounded-full w-8  h-8 object-contain"
-                />
-              </a>
+              {/* Instagram */}
+      <a
+        href="https://www.instagram.com/accounts/login/?hl=en"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white p-2 rounded-full shadow-md transition hover:scale-110"
+      >
+        <FaInstagram className="w-6 h-6 text-pink-500" />
+      </a>
+
+      {/* WhatsApp */}
+      <a
+        href="https://wa.me/yourphonenumber"
+        aria-label="WhatsApp"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white p-2 rounded-full shadow-md transition hover:scale-110"
+      >
+        <FaWhatsapp className="w-6 h-6 text-green-500" />
+      </a>
+
+      {/* Facebook */}
+      <a
+        href="https://www.facebook.com/yourprofilename"
+        aria-label="Facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white p-2 rounded-full shadow-md transition hover:scale-110"
+      >
+        <FaFacebookF className="w-6 h-6 text-blue-600" />
+      </a>
+
+      {/* Pinterest */}
+      <a
+        href="https://www.pinterest.com/"
+        aria-label="Pinterest"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-white p-2 rounded-full shadow-md transition hover:scale-110"
+      >
+        <FaPinterest className="w-6 h-6 text-red-600" />
+      </a>
             </div>
           </div>
 

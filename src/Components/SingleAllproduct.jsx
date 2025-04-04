@@ -178,6 +178,25 @@ const ProductDetails = () => {
                   ))}
                 </div>
               </div>
+              {/* Caret */}
+              <div className="mt-6">
+                <h3 className="font-medium text-gray-700">Carat</h3>
+                <div className="flex flex-wrap items-center gap-2 mt-2">
+                  {["16K ", "18K ", "22K"].map(carat => ( 
+                    <button
+                      key={carat}
+                      onClick={() => setSelectedMaterial(carat)}
+                      className={`px-3 py-2 border rounded-md text-sm ${selectedMaterial === carat
+                          ? "border-purple-600 bg-purple-100 text-purple-600"
+                          : "border-gray-300 text-gray-700"
+                        }`} 
+                    >
+                      {carat}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
 
               {/* Update the Size Selection section to be more mobile-friendly */}
               {/* Replace the Size Selection section with this */}
